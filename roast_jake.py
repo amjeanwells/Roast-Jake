@@ -17,7 +17,7 @@ st.markdown("""
             text-align: center;
             font-size: 4em;
             margin-bottom: 0.2em;
-            color: #000000;
+            color: #cc0000;
         }
         .roast-text {
             font-family: 'Special Elite', monospace;
