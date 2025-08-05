@@ -5,17 +5,19 @@ import random
 st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=UnifrakturCook:wght@700&display=swap');
+
         body {
             background-color: #ffe6f0;
         }
         .main {
             background-color: #ffe6f0 !important;
         }
-        h1 {
+        h1.gothic-title {
             font-family: 'UnifrakturCook', cursive;
             text-align: center;
             font-size: 4em;
             margin-bottom: 0.2em;
+            color: #000000;
         }
         .roast-text {
             font-family: 'Special Elite', monospace;
@@ -49,8 +51,8 @@ st.markdown("""
 st.image("https://raw.githubusercontent.com/your-username/roast-jake/main/IMG_3731.png", width=200)
 
 # Title and subtitle
-st.markdown("<h1>ð Feeling sad?</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align:center;'>Click below for a dopamine hit â at Jakeâs expense.</p>", unsafe_allow_html=True)
+st.markdown("<h1 class='gothic-title'>Feeling sad?</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;'>Click below for a dopamine hit — at Jake’s expense.</p>", unsafe_allow_html=True)
 
 # Load roasts
 @st.cache_data
