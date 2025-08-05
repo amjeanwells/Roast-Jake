@@ -6,19 +6,14 @@ st.markdown("""
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=UnifrakturCook:wght@700&display=swap');
 
-        body {
-            background-color: #ffe6f0;
-        }
-        .main {
-            background-color: #ffe6f0 !important;
-        }
         h1.gothic-title {
             font-family: 'UnifrakturCook', cursive;
             text-align: center;
             font-size: 4em;
             margin-bottom: 0.2em;
-            color: #cc0000;
+            color: #cc0000; /* blood red */
         }
+
         .roast-text {
             font-family: 'Special Elite', monospace;
             font-size: 1.6em;
@@ -26,6 +21,7 @@ st.markdown("""
             text-align: center;
             padding: 1em;
         }
+
         .stButton>button {
             background-color: #ff66b2;
             color: white;
@@ -37,9 +33,11 @@ st.markdown("""
             border: none;
             transition: background-color 0.3s ease;
         }
+
         .stButton>button:hover {
             background-color: #ff3385;
         }
+
         img {
             display: block;
             margin: 0 auto 20px auto;
@@ -47,10 +45,10 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Display glitter heart image
-st.image("https://raw.githubusercontent.com/your-username/roast-jake/main/IMG_3731.png", width=200)
+# Sparkling heart GIF 💖
+st.image("https://i.pinimg.com/originals/78/4e/43/784e43d7b7f90f9609e5b160cd61535e.gif", width=200)
 
-# Title and subtitle
+# Title & subtitle
 st.markdown("<h1 class='gothic-title'>Feeling sad?</h1>", unsafe_allow_html=True)
 st.markdown("<p style='text-align:center;'>Click below for a dopamine hit — at Jake’s expense.</p>", unsafe_allow_html=True)
 
@@ -58,7 +56,7 @@ st.markdown("<p style='text-align:center;'>Click below for a dopamine hit — at
 @st.cache_data
 def load_roasts():
     with open("roasts.txt", "r", encoding="utf-8") as file:
-        return [line.strip() for line in file if line.strip()]
+        return list(set(line.strip() for line in file if line.strip()))
 
 roasts = load_roasts()
 
