@@ -47,7 +47,7 @@ def load_roasts():
 roasts = load_roasts()
 
 # --- DISPLAY HEADER IMAGE ---
-st.image("https://raw.githubusercontent.com/YOUR_USERNAME/roast-jake/main/glitter_hearts.png", width=200)
+st.image("https://raw.githubusercontent.com/amjeanwells/roast-jake/main/IMG_3137.png", width=200)
 
 # --- HEADER ---
 st.markdown("<h1 style='text-align: center;'>💅 Feeling sad?</h1>", unsafe_allow_html=True)
