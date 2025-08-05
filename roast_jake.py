@@ -1,44 +1,58 @@
 import streamlit as st
 import random
 
-# --- PAGE CONFIG ---
-st.set_page_config(
-    page_title="Roast Jake",
-    page_icon="💔",
-    layout="centered",
-)
-
-# --- CUSTOM STYLING ---
+# Custom CSS styling
 st.markdown("""
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
-
-        html, body, [class*="css"] {
-            font-family: 'Bubblegum Sans', cursive;
+        @import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=UnifrakturCook:wght@700&display=swap');
+        body {
             background-color: #ffe6f0;
         }
-
-        .centered-button .stButton>button {
+        .main {
+            background-color: #ffe6f0 !important;
+        }
+        h1 {
+            font-family: 'UnifrakturCook', cursive;
+            text-align: center;
+            font-size: 4em;
+            margin-bottom: 0.2em;
+        }
+        .roast-text {
+            font-family: 'Special Elite', monospace;
+            font-size: 1.6em;
+            color: #cc0066;
+            text-align: center;
+            padding: 1em;
+        }
+        .stButton>button {
+            background-color: #ff66b2;
+            color: white;
+            padding: 0.75em 2em;
+            font-size: 1.3em;
+            border-radius: 12px;
             display: block;
             margin: 0 auto;
-            background-color: #ff69b4;
-            color: white;
-            border-radius: 20px;
-            padding: 12px 24px;
-            font-size: 20px;
-            font-weight: bold;
+            border: none;
+            transition: background-color 0.3s ease;
         }
-
-        .roast-text {
-            color: #ff007f;
-            font-size: 24px;
-            text-align: center;
-            padding-top: 20px;
+        .stButton>button:hover {
+            background-color: #ff3385;
+        }
+        img {
+            display: block;
+            margin: 0 auto 20px auto;
         }
     </style>
 """, unsafe_allow_html=True)
 
-# --- LOAD ROASTS FROM FILE ---
+# Display glitter heart image
+st.image("https://raw.githubusercontent.com/your-username/roast-jake/main/IMG_3731.png", width=200)
+
+# Title and subtitle
+st.markdown("<h1>ð Feeling sad?</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center;'>Click below for a dopamine hit â at Jakeâs expense.</p>", unsafe_allow_html=True)
+
+# Load roasts
 @st.cache_data
 def load_roasts():
     with open("roasts.txt", "r", encoding="utf-8") as file:
@@ -46,16 +60,6 @@ def load_roasts():
 
 roasts = load_roasts()
 
-# --- DISPLAY HEADER IMAGE ---
-st.image("https://raw.githubusercontent.com/amjeanwells/roast-jake/main/IMG_3137.png", width=200)
-
-# --- HEADER ---
-st.markdown("<h1 style='text-align: center;'>💅 Feeling sad?</h1>", unsafe_allow_html=True)
-st.markdown("<h4 style='text-align: center;'>Click below for a dopamine hit — at Jake’s expense.</h4>", unsafe_allow_html=True)
-
-# --- ROAST BUTTON ---
-with st.container():
-    col1, col2, col3 = st.columns([1, 2, 1])
-    with col2:
-        if st.button("Roast Jake"):
-            st.markdown(f"<div class='roast-text'>{random.choice(roasts)}</div>", unsafe_allow_html=True)
+# Button
+if st.button("Roast Jake"):
+    st.markdown(f"<div class='roast-text'>{random.choice(roasts)}</div>", unsafe_allow_html=True)
